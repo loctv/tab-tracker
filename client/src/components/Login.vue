@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col class="text-left" md="4" offset-md="4">
-        <h1>Register</h1>
+        <h1>Login</h1>
         <b-form>
           <b-form-group
             label="Email:">
@@ -28,7 +28,7 @@
             <div v-html="error"></div>
           </b-alert>
           
-          <b-button type="submit" @click="register" variant="primary">Register</b-button>
+          <b-button type="submit" @click="login" variant="primary">Login</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -46,9 +46,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const res = await AuthenticationService.register({
+        const res = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })

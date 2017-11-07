@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <page-header />
+    <b-container fluid id="main">
+      <!-- <img src="./assets/logo.png"> -->
+      <router-view/>
+    </b-container>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    PageHeader
+  }
 }
 </script>
+
 
 <style>
 #app {
@@ -18,6 +26,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+#main {
+  margin-top: 30px;
 }
 </style>
