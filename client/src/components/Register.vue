@@ -1,33 +1,38 @@
 <template>
-  <v-layout row>
-    <v-flex xs12 sm4 offset-sm4>
-      <v-card>
-        <v-card-title primary-title>
-          <div>
-            <div class="headline">Register</div>
-          </div>
-        </v-card-title>
-        <v-card-text>
-          <v-text-field
-            label="Email"
-            v-model="email"
-            required
-          ></v-text-field>
-          <v-text-field
-            label="Password"
-            v-model="password"
-            type="password"
-            required
-          ></v-text-field>
-          <div v-html="error" class="error"></div>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn flat color="orange" @click="register">SUBMIT</v-btn>
-        </v-card-actions>
-        
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <b-container>
+    <b-row>
+      <b-col class="text-left" md="4" offset-md="4">
+        <h1>Register New User</h1>
+        <b-form>
+          <b-form-group
+            label="Email:">
+            <b-form-input
+              type="email" 
+              v-model="email" 
+              required
+              placeholder="Enter email"
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label="Password:">
+            <b-form-input
+              type="password" 
+              v-model="password" 
+              required
+              placeholder="Enter password"
+            ></b-form-input>
+          </b-form-group>
+          <b-alert variant="danger"dismissible
+                  :show="error"
+                  @dismissed="error=null">
+            <div v-html="error"></div>
+          </b-alert>
+          
+          <b-button type="submit" @click="register" variant="primary">Submit</b-button>
+        </b-form>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -58,9 +63,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.error {
-  color: red;
-  background-color: white !important;
-  text-align: left;
-}
 </style>
