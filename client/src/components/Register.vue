@@ -1,5 +1,4 @@
 <template>
-  <b-container>
     <b-row>
       <b-col class="text-left" md="4" offset-md="4">
         <h1>Register</h1>
@@ -32,7 +31,6 @@
         </b-form>
       </b-col>
     </b-row>
-  </b-container>
 </template>
 
 <script>

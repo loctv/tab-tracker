@@ -5,12 +5,15 @@
     <b-navbar-brand href="#" @click="navigateTo({name: 'root'})">Tab Tracker</b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">
-
+      <b-navbar-nav>
+        <b-nav-item 
+          @click="navigateTo({name: 'songs'})">Browse</b-nav-item>
+      </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto" right>
         <b-nav-item 
           @click="navigateTo({name: 'login'})" 
-          v-if="!$store.state.isUserLoggedIn">Log in</b-nav-item>
+          v-if="!$store.state.isUserLoggedIn">Log In</b-nav-item>
         <b-nav-item 
           @click="navigateTo({name: 'register'})" 
           v-if="!$store.state.isUserLoggedIn">Sign Up</b-nav-item>
