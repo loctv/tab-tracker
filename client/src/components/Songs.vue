@@ -1,6 +1,6 @@
 <template>
   <b-row>
-      <b-col class="text-left" md="4" offset-md="4">
+      <b-col class="text-left" md="6" offset-md="3">
         <b-card class="ml-auto">
           <div class="card-title">
             <b-row>
@@ -15,7 +15,7 @@
             </b-row>
           </div>
           <div class="card-text">
-            <div v-for="song in songs" :key="song.title">
+            <div v-for="song in songs" :key="song.id">
               {{song.title}}
             </div>
           </div>

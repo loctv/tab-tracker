@@ -9,7 +9,6 @@
                 label="Title:">
                 <b-form-input
                   type="text"
-                  :state="song.title?true:false"
                   v-model="song.title" 
                   @input="validate"
                 ></b-form-input>
@@ -18,7 +17,6 @@
                 label="Artist:">
                 <b-form-input
                   type="text" 
-                  :state="song.artist?true:false"
                   v-model="song.artist" 
                   @input="validate"                  
                 ></b-form-input>
@@ -27,7 +25,6 @@
                 label="Album:">
                 <b-form-input
                   type="text" 
-                  :state="song.album?true:false"
                   v-model="song.album" 
                   @input="validate"
                 ></b-form-input>
@@ -36,7 +33,6 @@
                 label="Album Image:">
                 <b-form-input
                   type="text" 
-                  :state="song.albumImageUrl?true:false"
                   v-model="song.albumImageUrl" 
                   @input="validate"
                 ></b-form-input>
@@ -45,7 +41,6 @@
                 label="Genre:">
                 <b-form-input
                   type="text" 
-                  :state="song.genre?true:false"
                   v-model="song.genre" 
                   @input="validate"
                 ></b-form-input>
@@ -54,7 +49,6 @@
                 label="Youtube ID:">
                 <b-form-input
                   type="text" 
-                  :state="song.youtubeId?true:false"
                   v-model="song.youtubeId" 
                   @input="validate"
                 ></b-form-input>
@@ -71,7 +65,6 @@
                 <b-form-textarea
                   v-model="song.lyrics"
                   @input="validate"
-                  :state="song.lyrics?true:false"
                   :rows="3" :max-rows="6">
                 </b-form-textarea>
               </b-form-group>
@@ -79,14 +72,14 @@
                 <b-form-textarea
                   v-model="song.tab"
                   @input="validate"
-                  :state="song.tab?true:false"
                   :rows="3" :max-rows="6">
                 </b-form-textarea>
               </b-form-group>
             </b-form>
           </div>
         </b-card>
-        <div class="text-right mt-2">      
+        <div class="text-danger mt-2" v-if="!validated">Please input text into all fields required *</div>
+        <div class="text-right mt-1">      
           <b-button variant="primary" @click="post" :disabled="!validated">Create Song</b-button>
         </div>
       </b-col>
